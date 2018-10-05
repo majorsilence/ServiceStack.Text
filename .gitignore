@@ -49,3 +49,4 @@ _NCrunch*/
 *.ncrunchsolution
 *.xml
 /src/.vs/ServiceStack.Text/v15/Server/sqlite3
+/src/.vs/ServiceStack.Text/DesignTimeBuild
