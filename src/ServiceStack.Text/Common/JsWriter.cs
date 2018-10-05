@@ -1,12 +1,9 @@
+using ServiceStack.Text.Json;
+using ServiceStack.Text.Jsv;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Reflection;
-using System.Linq;
-
-using ServiceStack.Text.Json;
-using ServiceStack.Text.Jsv;
 
 namespace ServiceStack.Text.Common
 {
@@ -206,7 +203,7 @@ namespace ServiceStack.Text.Common
             switch (typeCode)
             {
                 case TypeCode.SByte:
-                    writer.Write((sbyte) enumFlagValue);
+                    writer.Write((sbyte)enumFlagValue);
                     break;
                 case TypeCode.Byte:
                     writer.Write((byte)enumFlagValue);
@@ -245,14 +242,11 @@ namespace ServiceStack.Text.Common
         public JsWriter()
         {
             this.SpecialTypes = new Dictionary<Type, WriteObjectDelegate>
-        	{
-        		{ typeof(Uri), Serializer.WriteObjectString },
-        		{ typeof(Type), WriteType },
-        		{ typeof(Exception), Serializer.WriteException },
-#if !MONOTOUCH && !SILVERLIGHT && !XBOX  && !ANDROID
-                { typeof(System.Data.Linq.Binary), Serializer.WriteLinqBinary },
-#endif
-        	};
+            {
+                { typeof(Uri), Serializer.WriteObjectString },
+                { typeof(Type), WriteType },
+                { typeof(Exception), Serializer.WriteException },
+            };
         }
 
         public WriteObjectDelegate GetValueTypeToStringMethod(Type type)
@@ -326,7 +320,7 @@ namespace ServiceStack.Text.Common
                     ? (WriteObjectDelegate)Serializer.WriteEnumFlags
                     : Serializer.WriteEnum;
 
-            if (type.HasInterface(typeof (IFormattable)))
+            if (type.HasInterface(typeof(IFormattable)))
                 return Serializer.WriteFormattableObjectString;
 
             return Serializer.WriteObjectString;

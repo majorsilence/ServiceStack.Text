@@ -48,3 +48,4 @@ _NCrunch*/
 *.ncrunchproject
 *.ncrunchsolution
 *.xml
+/src/.vs/ServiceStack.Text/v15/Server/sqlite3

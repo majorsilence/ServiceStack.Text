@@ -1,6 +1,6 @@
+using ServiceStack.Text.Json;
 using System;
 using System.IO;
-using ServiceStack.Text.Json;
 
 namespace ServiceStack.Text.Common
 {
@@ -46,7 +46,6 @@ namespace ServiceStack.Text.Common
         void WriteDecimal(TextWriter writer, object decimalValue);
         void WriteEnum(TextWriter writer, object enumValue);
         void WriteEnumFlags(TextWriter writer, object enumFlagValue);
-        void WriteLinqBinary(TextWriter writer, object linqBinaryValue);
         void WriteJsonValue(TextWriter writer, object jsonValue);
         //object EncodeMapKey(object value);
 
